@@ -1,0 +1,149 @@
+{
+  "appName": "Yakiniku Like – Expired Killer",
+  "tagline": "Quality Starts with You.",
+  "stores": [
+    "Demo Store"
+  ],
+  "positions": [
+    "SM",
+    "ASM",
+    "SUP",
+    "STAFF"
+  ],
+  "zones": [
+    {
+      "name": "Show Case Dish out Chiller",
+      "groups": [
+        {
+          "life": "P",
+          "items": [
+            "Mini Salad",
+            "Kimchi",
+            "Tamakoyaki",
+            "Arabigi",
+            "Tasty Tofu",
+            "Sanchu",
+            "Chilli & Garlic",
+            "Onsen Egg",
+            "Rice"
+          ]
+        },
+        {
+          "life": "P+1",
+          "items": [
+            "Daifuku",
+            "Taiyaki",
+            "Lemon",
+            "Moto Dare Sauce (Squeeze bottle)",
+            "Shoreki Dressing (Squeeze bottle)",
+            "Wakame"
+          ]
+        },
+        {
+          "life": "P+2",
+          "items": [
+            "Seaweed",
+            "Mozzarella"
+          ]
+        },
+        {
+          "life": "P+13",
+          "items": [
+            "Lime Juice"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Under Counter Chiller",
+      "groups": [
+        {
+          "life": "P",
+          "items": [
+            "All Meat"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Show Case Meat Chiller",
+      "groups": [
+        {
+          "life": "P+1",
+          "items": [
+            "Moto Dare Sauce (Squeeze bottle)",
+            "Shio Dare Sauce (Squeeze bottle)",
+            "Sukiyaki Sauce (Squeeze bottle)"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Thawing Chiller",
+      "groups": [
+        {
+          "life": "P+2",
+          "items": [
+            "All Beef",
+            "All Pork",
+            "Chicken",
+            "Seafood"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vegetable Chiller",
+      "groups": [
+        {
+          "life": "P",
+          "items": [
+            "Kimchi in Container"
+          ]
+        },
+        {
+          "life": "P+1",
+          "items": [
+            "Tamakoyaki",
+            "Blended Chili",
+            "Blended Garlic",
+            "Shitake Mushroom",
+            "Arabigi",
+            "Prepared vegetables"
+          ]
+        },
+        {
+          "life": "P+2",
+          "items": [
+            "Sauce in a Jug"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dryfood Store",
+      "groups": [
+        {
+          "life": "P+14",
+          "items": [
+            "Roasted white sesame seeds"
+          ]
+        },
+        {
+          "life": "P+30",
+          "items": [
+            "Sugar",
+            "Salt",
+            "Black pepper",
+            "Youki",
+            "Dashi powder",
+            "Dried wakame",
+            "MSG",
+            "Sesame oil",
+            "Vegetable oil"
+          ]
+        }
+      ]
+    }
+  ]
+}

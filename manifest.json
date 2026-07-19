@@ -1,0 +1,15 @@
+{
+  "name": "Yakiniku Like \u2013 Expired Killer",
+  "short_name": "Expired Killer",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "icons": [
+    {
+      "src": "logo.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
