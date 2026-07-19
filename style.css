@@ -46,9 +46,11 @@ button{width:100%;border:0;border-radius:14px;padding:15px;font-size:18px;font-w
 .warning{background:#fff5d8;border:1px solid #efd374;padding:12px;border-radius:12px;margin-top:12px;display:none}
 .confirm{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-weight:700}
 .confirm input{width:24px;height:24px;accent-color:var(--green)}
-.success{background:var(--green);color:#fff;text-align:center;display:flex;flex-direction:column;justify-content:center}
+.success{background:#f5f5f5;color:#111;text-align:center;display:flex;flex-direction:column;justify-content:center}
 .check{font-size:86px;line-height:1}
 .success h2{font-size:34px;margin:8px 0}
-.success .summary{background:rgba(255,255,255,.14);padding:16px;border-radius:16px;margin:18px 0;text-align:left}
-.success button{background:#fff;color:var(--green)}
+.success .summary{background:#fff;border:1px solid var(--line);box-shadow:0 4px 14px rgba(0,0,0,.06);padding:16px;border-radius:16px;margin:18px 0;text-align:left}
+.success button{background:var(--black);color:#fff}
 .small{font-size:13px;color:#666}
+
+.success .check{color:var(--green)}

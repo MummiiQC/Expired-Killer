@@ -75,6 +75,39 @@ function zone(){
   };
 }
 
+function submitInspection(payload){
+  return new Promise((resolve,reject)=>{
+    try{
+      const iframe=document.createElement("iframe");
+      iframe.name="expired-killer-save-target";
+      iframe.style.display="none";
+      document.body.appendChild(iframe);
+
+      const form=document.createElement("form");
+      form.method="POST";
+      form.action=BACKEND_URL;
+      form.target=iframe.name;
+      form.style.display="none";
+
+      const input=document.createElement("input");
+      input.type="hidden";
+      input.name="data";
+      input.value=JSON.stringify(payload);
+      form.appendChild(input);
+      document.body.appendChild(form);
+
+      form.submit();
+      setTimeout(()=>{
+        form.remove();
+        iframe.remove();
+        resolve();
+      },1200);
+    }catch(error){
+      reject(error);
+    }
+  });
+}
+
 function finalForm(){
   app.innerHTML=`<main class="screen">
     <div class="brand"><img class="logo" src="logo.jpg"><h1>Closing Inspection</h1></div>
@@ -117,16 +150,8 @@ function finalForm(){
       checkedItems,
       totalItems
     };
-
     try{
-      const body=new URLSearchParams();
-      body.set("data", JSON.stringify(payload));
-      await fetch(BACKEND_URL,{
-        method:"POST",
-        mode:"no-cors",
-        headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
-        body
-      });
+      await submitInspection(payload);
       success(completedAt);
     }catch(error){
       finishButton.disabled=false;
@@ -151,4 +176,11 @@ function success(now=new Date()){
 fetch("config.json").then(r=>r.json()).then(c=>{
   CONFIG=c; store=localStorage.getItem("ek_store")||CONFIG.stores[0]; home();
 });
-if("serviceWorker" in navigator){navigator.serviceWorker.register("service-worker.js").catch(()=>{});}
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.getRegistrations().then(registrations=>{
+    registrations.forEach(registration=>registration.unregister());
+  }).catch(()=>{});
+}
+if("caches" in window){
+  caches.keys().then(keys=>Promise.all(keys.map(key=>caches.delete(key)))).catch(()=>{});
+}
