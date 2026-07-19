@@ -4,7 +4,9 @@ let zoneIndex = 0;
 let checked = {};
 let store = "";
 let inspector = "";
-let position = "SM";
+let position = localStorage.getItem("ek_position") || "SM";
+let startTime = null;
+const BACKEND_URL = "https://script.google.com/macros/s/AKfycbyQwmo1L4aeZCsZb0_W9_TBpFCbbWLsWyDFctBsj_VlRW0mRpw-jk1io9UTgn2RzJ2lRQ/exec";
 
 const app = document.getElementById("app");
 const fmt = d => d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"});
@@ -34,7 +36,14 @@ function home(){
     <div class="small" style="text-align:center;margin-top:10px">Dates are calculated automatically.</div>
   </main>`;
   document.getElementById("store").onchange=e=>{store=e.target.value;localStorage.setItem("ek_store",store)};
-  document.getElementById("start").onclick=()=>{store=document.getElementById("store").value; zoneIndex=0;checked={};zone()};
+  document.getElementById("start").onclick=()=>{
+    store=document.getElementById("store").value;
+    localStorage.setItem("ek_store",store);
+    startTime=new Date();
+    zoneIndex=0;
+    checked={};
+    zone();
+  };
 }
 
 function zone(){
@@ -70,25 +79,66 @@ function finalForm(){
   app.innerHTML=`<main class="screen">
     <div class="brand"><img class="logo" src="logo.jpg"><h1>Closing Inspection</h1></div>
     <section class="card">
-      <label>Inspector Name</label><input id="name" type="text" placeholder="Enter name">
+      <label>Inspector Name</label><input id="name" type="text" placeholder="Enter name" value="${localStorage.getItem("ek_inspector") || ""}">
       <label style="margin-top:16px">Position</label>
-      <select id="position">${CONFIG.positions.map(p=>`<option>${p}</option>`).join("")}</select>
+      <select id="position">${CONFIG.positions.map(p=>`<option ${p===position?"selected":""}>${p}</option>`).join("")}</select>
       <label class="confirm"><input id="confirm" type="checkbox"><span>I confirm that all Shelf Life items have been inspected.</span></label>
     </section>
     <div id="warning" class="warning">Please enter your name and confirm the inspection.</div>
     <div class="actions"><button class="secondary" id="back">BACK</button><button class="primary" id="finish" style="margin-top:0">FINISH</button></div>
   </main>`;
   document.getElementById("back").onclick=()=>{zoneIndex=CONFIG.zones.length-1;zone()};
-  document.getElementById("finish").onclick=()=>{
+  document.getElementById("finish").onclick=async()=>{
     inspector=document.getElementById("name").value.trim();
     position=document.getElementById("position").value;
-    if(!inspector || !document.getElementById("confirm").checked){document.getElementById("warning").style.display="block";return;}
-    success();
+    if(!inspector || !document.getElementById("confirm").checked){
+      document.getElementById("warning").style.display="block";
+      return;
+    }
+
+    localStorage.setItem("ek_inspector", inspector);
+    localStorage.setItem("ek_position", position);
+
+    const finishButton=document.getElementById("finish");
+    finishButton.disabled=true;
+    finishButton.textContent="SAVING...";
+
+    const completedAt=new Date();
+    const totalItems=CONFIG.zones.reduce((sum,z)=>sum+z.groups.reduce((s,g)=>s+g.items.length,0),0);
+    const checkedItems=Object.values(checked).filter(Boolean).length;
+    const payload={
+      inspectionDate: completedAt.toLocaleDateString("en-CA"),
+      store,
+      inspectorName: inspector,
+      position,
+      startTime: (startTime || completedAt).toISOString(),
+      completedTime: completedAt.toISOString(),
+      status: checkedItems===totalItems ? "Completed" : "Incomplete",
+      checkedItems,
+      totalItems
+    };
+
+    try{
+      const body=new URLSearchParams();
+      body.set("data", JSON.stringify(payload));
+      await fetch(BACKEND_URL,{
+        method:"POST",
+        mode:"no-cors",
+        headers:{"Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},
+        body
+      });
+      success(completedAt);
+    }catch(error){
+      finishButton.disabled=false;
+      finishButton.textContent="FINISH";
+      const warning=document.getElementById("warning");
+      warning.textContent="Save failed. Please check the internet connection and try again.";
+      warning.style.display="block";
+    }
   };
 }
 
-function success(){
-  const now=new Date();
+function success(now=new Date()){
   app.innerHTML=`<main class="screen success">
     <div class="check">✓</div><h2>Inspection Completed</h2>
     <div style="font-size:19px;font-weight:800">${CONFIG.tagline}</div><div style="font-size:24px;margin-top:6px">Thank You!</div>
