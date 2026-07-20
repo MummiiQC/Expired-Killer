@@ -1,5 +1,5 @@
 {
-  "appName": "Yakiniku Like – Expired Killer",
+  "appName": "Expired Killer",
   "tagline": "Quality Starts with You. | คุณภาพเริ่มต้นที่คุณ",
   "stores": [
     "CWV",
@@ -35,7 +35,7 @@
   ],
   "zones": [
     {
-      "name": "Show Case Dish out Chiller | ตู้โชว์เคสเนื้อดิชเอ้า",
+      "name": "Show Case Dish out Chiller | ตู้โชว์เคสดิชเอ้า",
       "groups": [
         {
           "life": "P",
@@ -46,7 +46,7 @@
             "Arabigi | ไส้กรอกพร้อมเสิร์ฟ",
             "Tasty Tofu | เต้าหู้พร้อมเสิร์ฟ",
             "Sanchu | ผักซันจูพร้อมเสิร์ฟ",
-            "Chilli & Garlic | พริกกระเทียม",
+            "Chilli&Garlic | พริกกระเทียม",
             "Onsen Egg | ไข่ออนเซ็นพร้อมเสิร์ฟ"
           ]
         },
