@@ -1,6 +1,6 @@
 {
   "appName": "Yakiniku Like – Expired Killer",
-  "tagline": "Quality Starts with You.",
+  "tagline": "Quality Starts with You. | คุณภาพเริ่มต้นที่คุณ",
   "stores": [
     "CWV",
     "MBKE",
@@ -35,135 +35,134 @@
   ],
   "zones": [
     {
-      "name": "Show Case Dish out Chiller",
+      "name": "Show Case Dish out Chiller | ตู้โชว์เคสเนื้อดิชเอ้า",
       "groups": [
         {
           "life": "P",
           "items": [
-            "Mini Salad",
-            "Kimchi",
-            "Tamakoyaki",
-            "Arabigi",
-            "Tasty Tofu",
-            "Sanchu",
-            "Chilli & Garlic",
-            "Onsen Egg",
-            "Rice"
+            "Mini Salad | มินิสลัด",
+            "Kimchi | กิมจิ",
+            "Tamagoyaki | ไข่หวานพร้อมเสิร์ฟ",
+            "Arabigi | ไส้กรอกพร้อมเสิร์ฟ",
+            "Tasty Tofu | เต้าหู้พร้อมเสิร์ฟ",
+            "Sanchu | ผักซันจูพร้อมเสิร์ฟ",
+            "Chilli & Garlic | พริกกระเทียม",
+            "Onsen Egg | ไข่ออนเซ็นพร้อมเสิร์ฟ"
           ]
         },
         {
           "life": "P+1",
           "items": [
-            "Daifuku",
-            "Taiyaki",
-            "Lemon",
-            "Moto Dare Sauce (Squeeze bottle)",
-            "Shoreki Dressing (Squeeze bottle)",
-            "Wakame"
+            "Daifuku | ไดฟุกุ",
+            "Taiyaki | ขนมปลา",
+            "Lemon | เลม่อน",
+            "Moto Dare Sauce (Bottle) | ซอสโมโตในขวด",
+            "Choregi Dressing (Bottle) | น้ำสลัด",
+            "Wakame | สาหร่ายวากาเมะ"
           ]
         },
         {
           "life": "P+2",
           "items": [
-            "Seaweed",
-            "Mozzarella"
+            "Seaweed | สาหร่ายโรยข้าว",
+            "Mozzarella | ชีส"
           ]
         },
         {
           "life": "P+13",
           "items": [
-            "Lime Juice"
+            "Lime Juice | น้ำมะนาว"
           ]
         }
       ]
     },
     {
-      "name": "Under Counter Chiller",
+      "name": "Under Counter Chiller | ตู้เคาน์เตอร์เนื้อ",
       "groups": [
         {
           "life": "P",
           "items": [
-            "All Meat"
+            "All Meat | เนื้อที่จัดเรียงในจาน"
           ]
         }
       ]
     },
     {
-      "name": "Show Case Meat Chiller",
+      "name": "Show Case Meat Chiller | ตู้โชว์เคสเนื้อ",
       "groups": [
         {
           "life": "P+1",
           "items": [
-            "Moto Dare Sauce (Squeeze bottle)",
-            "Shio Dare Sauce (Squeeze bottle)",
-            "Sukiyaki Sauce (Squeeze bottle)"
+            "Moto Dare Sauce (Bottle) | โมโตในขวด",
+            "Shio Dare Sauce (Bottle) | ซีซอลท์ในขวด",
+            "Sukiyaki Sauce (Bottle) | ซอสสุกี้"
           ]
         }
       ]
     },
     {
-      "name": "Thawing Chiller",
+      "name": "Thawing Chiller | ตู้ทำละลาย",
       "groups": [
         {
           "life": "P+2",
           "items": [
-            "All Beef",
-            "All Pork",
-            "Chicken",
-            "Seafood"
+            "All Beef | เนื้อทุกประเภท",
+            "All Pork | หมูทุกประเภท",
+            "Chicken | ไก่",
+            "Seafood | อาหารทะเล"
           ]
         }
       ]
     },
     {
-      "name": "Vegetable Chiller",
+      "name": "Vegetable Chiller | ตู้ผัก",
       "groups": [
         {
           "life": "P",
           "items": [
-            "Kimchi in Container"
+            "Kimchi in Container | กิมจิในกล่อง"
           ]
         },
         {
           "life": "P+1",
           "items": [
-            "Tamakoyaki",
-            "Blended Chili",
-            "Blended Garlic",
-            "Shitake Mushroom",
-            "Arabigi",
-            "Prepared vegetables"
+            "Tamagoyaki | ไข่หวานหั่น",
+            "Blended Chili | พริกปั่น",
+            "Blended Garlic | กระเทียมปั่น",
+            "Shiitake Mushroom | เห็ด",
+            "Arabigi | ไส้กรอกหั่น",
+            "Prepared Vegetables | ผักตัดแต่งแล้ว"
           ]
         },
         {
           "life": "P+2",
           "items": [
-            "Sauce in a Jug"
+            "Sauce in a Jug | ซอสในเหยือก"
           ]
         }
       ]
     },
     {
-      "name": "Dryfood Store",
+      "name": "Dryfood Store | อาหารแห้ง",
       "groups": [
         {
           "life": "P+14",
           "items": [
-            "Roasted white sesame seeds"
+            "Roasted White Sesame Seeds | งาขาวคั่ว"
           ]
         },
         {
           "life": "P+30",
           "items": [
-            "Sugar",
-            "Salt",
-            "Black pepper",
-            "Youki",
-            "Dashi powder",
-            "Dried wakame",
-            "MSG",
-            "Sesame oil",
-            "Vegetable oil"
+            "Sugar | น้ำตาล",
+            "Salt | เกลือ",
+            "Black Pepper | พริกไทยดำ",
+            "Youki | ผงไก่ยูกิ",
+            "Dashi Powder | ผงปลาทำซุป",
+            "Dried Wakame | สาหร่ายวากาเมะแห้ง",
+            "MSG | ผงชูรส",
+            "Sesame Oil | น้ำมันงา",
+            "Vegetable Oil | น้ำมันพืช"
           ]
         }
       ]
